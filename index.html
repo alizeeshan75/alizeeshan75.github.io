@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali Zeeshan</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--y:#FFB600;--dark:#2D2D2D;--mid:#666;--light:#F8F8F8;--white:#fff;--border:#E5E5E5}
+body{font-family:'Montserrat',sans-serif;background:var(--white);color:var(--dark);overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:flex;justify-content:flex-end;background:rgba(255,255,255,0.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--y)}
+
+.hero{min-height:100vh;padding:7rem 4rem 4rem;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:5rem}
+.hello{font-size:clamp(5rem,14vw,13rem);font-weight:900;color:var(--y);line-height:.88;letter-spacing:-.04em;margin-bottom:1.5rem}
+.hero-name{font-size:clamp(1.6rem,3vw,2.8rem);font-weight:800;color:var(--dark);letter-spacing:-.03em;line-height:1.05;margin-bottom:1.8rem}
+.hero-role{font-size:.88rem;font-weight:600;color:var(--dark);margin-bottom:.3rem}
+.hero-role span{color:var(--mid);font-weight:400}
+.hero-bar{width:48px;height:4px;background:var(--y);margin:1.8rem 0}
+.hero-links{display:flex;gap:1.8rem}
+.hero-links a{font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.hero-links a:hover{color:var(--y)}
+.hero-photo-col{display:flex;justify-content:center}
+.hero-photo-ring{width:clamp(260px,30vw,380px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid var(--y);box-shadow:0 0 0 10px rgba(255,182,0,.1)}
+.hero-photo-ring img{width:100%;height:100%;object-fit:cover;object-position:center top}
+
+.ticker{background:var(--y);padding:1.1rem 0;overflow:hidden}
+.ticker-track{display:inline-flex;animation:tick 22s linear infinite;white-space:nowrap}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.ticker-item{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:white;padding:0 2rem}
+.ticker-sep{font-size:.72rem;color:rgba(255,255,255,.4);padding:0 .5rem}
+
+.ey{font-size:.62rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--y);margin-bottom:.8rem}
+.sh{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:2.5rem}
+.sh em{font-style:normal;color:var(--y)}
+
+.dhl-section{min-height:100vh;background:var(--y);display:flex;align-items:center}
+.dhl-content{width:100%;padding:6rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.dhl-content .ey{color:rgba(255,255,255,.7)}
+.dhl-content .sh{color:white;margin-bottom:0}
+.dhl-items{display:flex;flex-direction:column;gap:1.5rem}
+.dhl-item{display:flex;gap:1rem;align-items:flex-start}
+.dhl-dot{width:8px;height:8px;border-radius:50%;background:white;flex-shrink:0;margin-top:.5rem}
+.dhl-text{font-size:.9rem;font-weight:500;line-height:1.7;color:rgba(255,255,255,.92)}
+.dhl-text strong{color:white;font-weight:800}
+
+.dhl-quote-break{height:100vh;position:relative;overflow:hidden}
+.dhl-quote-break img{width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:brightness(.45)}
+.dhl-quote-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.dhl-quote{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;color:white;text-align:center;max-width:750px;padding:0 3rem;line-height:1.25;letter-spacing:-.02em}
+.dhl-quote em{color:var(--y);font-style:normal}
+
+.dastgyr{padding:7rem 4rem;background:var(--light)}
+.tl{display:flex;gap:0;margin-bottom:4rem;position:relative}
+.tl::before{content:'';position:absolute;top:20px;left:0;right:0;height:2px;background:var(--border);z-index:0}
+.tl-item{flex:1;position:relative;z-index:1}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:var(--y);border:3px solid white;box-shadow:0 0 0 2px var(--y);margin-bottom:.8rem}
+.tl-date{font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--y);margin-bottom:.25rem}
+.tl-role{font-size:.78rem;font-weight:700;color:var(--dark);line-height:1.3;margin-bottom:.15rem}
+.tl-sub{font-size:.65rem;font-weight:400;color:var(--mid)}
+.work-screens{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
+.work-screen{position:relative;overflow:hidden;border-radius:4px;box-shadow:0 4px 24px rgba(0,0,0,.1)}
+.work-screen img{width:100%;display:block}
+.work-screen-label{position:absolute;bottom:0;left:0;right:0;padding:.9rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:white}
+.pm-keywords{margin-top:2.5rem;padding:2rem;background:white;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+.pm-kw{font-size:.72rem;font-weight:700;padding:.45rem 1.1rem;border:2px solid var(--y);color:var(--dark);letter-spacing:.05em}
+
+.projects{padding:7rem 4rem;background:var(--white)}
+.project-row{display:grid;grid-template-columns:55px 1fr 1fr;gap:3rem;align-items:start;padding:3.5rem 0;border-bottom:1px solid var(--border)}
+.project-row:first-of-type{border-top:1px solid var(--border)}
+.project-row.dim{opacity:.3}
+.p-idx{font-size:.6rem;font-weight:800;letter-spacing:.2em;color:var(--y);padding-top:.3rem;line-height:1.8}
+.p-name{font-size:clamp(1.1rem,1.8vw,1.5rem);font-weight:800;letter-spacing:-.02em;color:var(--dark);margin-bottom:.5rem}
+.p-desc{font-size:.83rem;font-weight:400;line-height:1.75;color:var(--mid);margin-bottom:1rem}
+.p-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.2rem}
+.pill{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border:1.5px solid var(--border);color:var(--mid)}
+.p-link{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dark);text-decoration:none;border-bottom:2.5px solid var(--y);padding-bottom:2px;display:inline-block;transition:color .2s}
+.p-link:hover{color:var(--y)}
+.p-soon{font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--border)}
+.laptop-outer{background:#1A1A1A;border-radius:12px;padding:10px 10px 0;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.laptop-screen{background:#0F0F0F;border-radius:6px 6px 0 0;overflow:hidden}
+.laptop-screen img{width:100%;display:block}
+.laptop-base{background:#2A2A2A;height:14px;border-radius:0 0 8px 8px;margin:0 -10px}
+.laptop-foot{width:40%;height:6px;background:#222;border-radius:0 0 4px 4px;margin:0 auto}
+
+.life{padding:7rem 4rem;background:var(--light)}
+.life-photos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:3rem}
+.life-photo{overflow:hidden;border-radius:3px;position:relative}
+.life-photo img{width:100%;height:400px;object-fit:cover;display:block}
+.life-photo-label{position:absolute;bottom:0;left:0;right:0;padding:.75rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.78));font-size:.6rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase;color:white}
+.life-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+.life-tag{font-size:.72rem;font-weight:700;padding:.45rem 1rem;background:white;border-left:3px solid var(--y);color:var(--dark)}
+
+.recs{padding:7rem 4rem;background:var(--y)}
+.recs .ey{color:rgba(255,255,255,.65)}
+.recs .sh{color:white}
+.recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.2);margin-top:3rem}
+.rec{background:white;padding:2.5rem}
+.rec-q{font-size:.92rem;font-style:italic;font-weight:400;line-height:1.8;color:var(--dark);margin-bottom:1.5rem}
+.rec-who{display:flex;align-items:center;gap:.9rem}
+.rec-photo{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2.5px solid var(--y);background:var(--light)}
+.rec-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
+.rec-n{font-size:.8rem;font-weight:700;color:var(--dark)}
+.rec-r{font-size:.68rem;color:var(--mid);margin-top:.1rem}
+
+.contact{padding:7rem 4rem;background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.ct-big{font-size:clamp(3rem,7vw,6rem);font-weight:900;color:var(--y);letter-spacing:-.04em;line-height:.88;margin-bottom:1.5rem}
+.ct-sub{font-size:.88rem;font-weight:400;line-height:1.8;color:var(--mid)}
+.ct-links{display:flex;flex-direction:column;gap:2px}
+.ct-link{display:flex;align-items:center;gap:1.5rem;padding:1.4rem 1.5rem;background:var(--light);text-decoration:none;border-left:3px solid transparent;transition:border-color .2s,background .2s}
+.ct-link:hover{border-left-color:var(--y);background:white}
+.ct-type{font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--y);width:65px;flex-shrink:0}
+.ct-val{font-size:.85rem;font-weight:500;color:var(--dark)}
+
+footer{background:var(--dark);padding:1.8rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.ft-l{font-size:.88rem;font-weight:800;color:var(--y)}
+.ft-r{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25)}
+
+.fade{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.fade.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  nav{padding:1.2rem 2rem}
+  .hero{grid-template-columns:1fr;padding:5.5rem 2rem 3rem;gap:2.5rem}
+  .hero-photo-col{order:-1}
+  .hero-photo-ring{width:180px}
+  .dhl-content,.work-screens,.life-photos,.contact{grid-template-columns:1fr!important}
+  .dhl-content{padding:4rem 2rem}
+  .dhl-quote-break{height:60vh}
+  .dastgyr,.projects,.life,.recs,.contact{padding:5rem 2rem}
+  .project-row{grid-template-columns:1fr;gap:1rem}
+  .tl{flex-direction:column;gap:1.5rem}
+  .tl::before{display:none}
+  .recs-grid{grid-template-columns:1fr}
+  footer{padding:1.5rem 2rem;flex-direction:column;gap:.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <ul class="nav-links">
+    <li><a href="#dhl">DHL</a></li>
+    <li><a href="#dastgyr">Dastgyr</a></li>
+    <li><a href="#indonesia">Indonesia</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#life">Life</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="fade">
+    <div class="hello">Hello!</div>
+    <div class="hero-name">I'm Ali Zeeshan</div>
+    <div class="hero-role">Program Management &amp; Digitalization <span>@ DHL Group</span></div>
+    <div class="hero-bar"></div>
+    <div class="hero-links">
+      <a href="https://linkedin.com/in/alizeeshan75" target="_blank">LinkedIn</a>
+      <a href="https://github.com/alizeeshan75" target="_blank">GitHub</a>
+      <a href="mailto:ali.zeeshan75@outlook.com">Email</a>
+    </div>
+  </div>
+  <div class="hero-photo-col fade">
+    <div class="hero-photo-ring">
+      <img src="images/headshot.jpg" alt="Ali Zeeshan">
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Program Management</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Supply Chain</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">DHL Americas</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Digitalization</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Dastgyr</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Microsoft Fabric</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Power BI</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">AI Agents</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Program Management</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Supply Chain</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">DHL Americas</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Digitalization</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Dastgyr</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Microsoft Fabric</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">Power BI</span><span class="ticker-sep">·</span>
+    <span class="ticker-item">AI Agents</span><span class="ticker-sep">·</span>
+  </div>
+</div>
+
+<section class="dhl-section" id="dhl">
+  <div class="dhl-content fade">
+    <div>
+      <img src="images/DHL_Group_logo.svg" alt="DHL Group" style="height:32px;margin-bottom:1.2rem;display:block;filter:brightness(0) invert(1)">
+      <div class="ey">DHL IT Group · 2023–Present</div>
+      <div class="sh" style="color:white">Americas<br>Program<br>Management.</div>
+      <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem">
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:rgba(255,255,255,.2);color:white;letter-spacing:.06em">DHL Group</span>
+        <span style="color:rgba(255,255,255,.4);font-size:.8rem">→</span>
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:rgba(255,255,255,.2);color:white;letter-spacing:.06em">Global Business Services</span>
+        <span style="color:rgba(255,255,255,.4);font-size:.8rem">→</span>
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:white;color:var(--y);letter-spacing:.06em">IT Group Functions Americas</span>
+      </div>
+    </div>
+    <div class="dhl-items">
+      <div class="dhl-item"><div class="dhl-dot"></div><div class="dhl-text"><strong>Microsoft Fabric Lakehouse</strong> — Dataflow Gen2 pipelines for HR &amp; payroll data across Americas IT</div></div>
+      <div class="dhl-item"><div class="dhl-dot"></div><div class="dhl-text"><strong>PMO Reporting Automation</strong> — Jira pipeline + Power BI dashboards for IT leadership</div></div>
+      <div class="dhl-item"><div class="dhl-dot"></div><div class="dhl-text"><strong>ADP Vantage HCM API</strong> — payroll data into the lakehouse, replacing manual Excel</div></div>
+      <div class="dhl-item"><div class="dhl-dot"></div><div class="dhl-text"><strong>Digitalization Initiatives</strong> — Banking Details, Mileage &amp; Payment Request process automation</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="dhl-quote-break fade">
+  <img src="images/dhl_office.jpg" alt="DHL Team">
+  <div class="dhl-quote-text">
+    <p class="dhl-quote">"Bigger the project,<br>the <em>wider</em> his grin."</p>
+  </div>
+</div>
+
+<section class="dastgyr fade" id="dastgyr">
+  <div style="display:flex;align-items:center;gap:1.5rem;margin-bottom:.5rem">
+    <img src="images/dastgyr_logo.svg" alt="Dastgyr" style="height:28px;margin-top:.6rem;flex-shrink:0">
+    <div>
+      <div class="ey">Dec 2020 – Oct 2023</div>
+      <div class="sh">Supply Chain<br><em>Product Management.</em></div>
+    </div>
+  </div>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Dec 2020</div>
+      <div class="tl-role">Delivery Ops Intern</div>
+      <div class="tl-sub">Gang of 20</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jun – Oct 2021</div>
+      <div class="tl-role">Operations Lead</div>
+      <div class="tl-sub">Delivery &amp; warehouse</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Nov 2021</div>
+      <div class="tl-role">Product Manager I</div>
+      <div class="tl-sub">Supply Chain vertical</div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <div class="tl-date">Jun – Oct 2023</div>
+      <div class="tl-role">Product Manager II</div>
+      <div class="tl-sub">Supply chain, delivery, fintech</div>
+    </div>
+  </div>
+  <div class="work-screens">
+    <div class="work-screen">
+      <img src="images/dastgyr_warehouse.jpg" alt="Warehouse Operations App">
+      <div class="work-screen-label">Warehouse Operations — WMS Mobile App</div>
+    </div>
+    <div class="work-screen">
+      <img src="images/dastgyr_delivery.jpg" alt="Delivery Operations App">
+      <div class="work-screen-label">Delivery Operations — Driver App &amp; Route Management</div>
+    </div>
+  </div>
+  <div class="pm-keywords">
+    <span class="pm-kw">Product Roadmapping</span>
+    <span class="pm-kw">Stakeholder Management</span>
+    <span class="pm-kw">Agile / Scrum</span>
+    <span class="pm-kw">User Research</span>
+    <span class="pm-kw">Go-to-Market</span>
+    <span class="pm-kw">KPI Definition</span>
+    <span class="pm-kw">Cross-functional Leadership</span>
+    <span class="pm-kw">Supply Chain Ops</span>
+  </div>
+</section>
+
+<section class="indonesia-section fade" id="indonesia">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center">
+    <div>
+      <div class="ey">2019 · Batu, Indonesia</div>
+      <div class="sh">Global Entrepreneur.<br><em>Business Strategy.</em></div>
+      <p style="font-size:.88rem;font-weight:700;line-height:1.6;color:var(--dark);padding:.9rem 1.2rem;border-left:4px solid var(--y);background:rgba(255,182,0,.07);margin-bottom:1.5rem">Launched a farm café from zero — IDR 30M in first-month sales.</p>
+      <div style="display:flex;flex-direction:column;gap:1rem">
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:8px;height:8px;border-radius:50%;background:var(--y);flex-shrink:0;margin-top:.45rem"></div><div style="font-size:.88rem;line-height:1.7;color:var(--dark)"><strong>Harvest Queen Hydroponics</strong> — feasibility report &amp; operational strategy for new café</div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:8px;height:8px;border-radius:50%;background:var(--y);flex-shrink:0;margin-top:.45rem"></div><div style="font-size:.88rem;line-height:1.7;color:var(--dark)"><strong>AIESEC Global Entrepreneur</strong> — cross-cultural team, Southeast Asia market</div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><div style="width:8px;height:8px;border-radius:50%;background:var(--y);flex-shrink:0;margin-top:.45rem"></div><div style="font-size:.88rem;line-height:1.7;color:var(--dark)"><strong>Consumer research</strong> — market analysis driving menu and pricing decisions</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem">
+      <img src="images/indonesia1.jpg" alt="Indonesia" style="width:100%;height:200px;object-fit:cover;border-radius:3px">
+      <img src="images/indonesia4.JPG" alt="Indonesia" style="width:100%;height:200px;object-fit:cover;border-radius:3px;object-position:center 15%">
+      <img src="images/indonesia3.JPG" alt="Indonesia" style="width:100%;height:200px;object-fit:cover;border-radius:3px;grid-column:span 2;object-position:center 30%">
+    </div>
+  </div>
+</section>
+
+<style>
+.indonesia-section{padding:7rem 4rem;background:var(--light)}
+@media(max-width:900px){
+  .indonesia-section{padding:5rem 2rem}
+  .indonesia-section > div{grid-template-columns:1fr!important}
+}
+</style>
+
+<section class="projects fade" id="projects">
+  <div class="ey">Side Projects · 2025</div>
+  <div class="sh">Built. <em>Not pitched.</em></div>
+  <div class="project-row">
+    <div class="p-idx">01<br><span style="font-size:.52rem">LIVE</span></div>
+    <div>
+      <div class="p-name">Supply Chain AI Agent</div>
+      <p class="p-desc">Ask supply chain questions in plain English. The agent decides which tools to call — SQL queries, KPI calculations, charts — and returns a data-driven answer.</p>
+      <div class="p-pills">
+        <span class="pill">Gemini 2.5 Flash</span>
+        <span class="pill">Tool Use</span>
+        <span class="pill">SQLite</span>
+        <span class="pill">Streamlit</span>
+        <span class="pill">Plotly</span>
+      </div>
+      <a href="https://github.com/alizeeshan75/supply-chain-ai-agent" target="_blank" class="p-link">View on GitHub →</a>
+    </div>
+    <div>
+      <div class="laptop-outer">
+        <div class="laptop-screen"><img src="images/map.jpg" alt="Supply Chain AI Agent"></div>
+        <div class="laptop-base"></div>
+      </div>
+      <div class="laptop-foot"></div>
+    </div>
+  </div>
+  <div class="project-row dim">
+    <div class="p-idx">02</div>
+    <div>
+      <div class="p-name">Digitalization Copilot</div>
+      <p class="p-desc">Ingest any SOP, identify digitalization opportunities, output a roadmap with tech stack recommendations.</p>
+      <div class="p-pills"><span class="pill">Gemini API</span><span class="pill">PDF Parsing</span><span class="pill">Python</span></div>
+    </div>
+    <div style="padding-top:.3rem"><span class="p-soon">Coming Soon</span></div>
+  </div>
+  <div class="project-row dim">
+    <div class="p-idx">03</div>
+    <div>
+      <div class="p-name">Multi-Agent PM Dashboard</div>
+      <p class="p-desc">Jira agent, deadline tracker, blocker detector — orchestrated into a daily PM standup automatically.</p>
+      <div class="p-pills"><span class="pill">Multi-Agent</span><span class="pill">Jira API</span><span class="pill">React</span></div>
+    </div>
+    <div style="padding-top:.3rem"><span class="p-soon">Coming Soon</span></div>
+  </div>
+</section>
+
+<section class="life fade" id="life">
+  <div class="ey">Beyond Work</div>
+  <div class="sh">On &amp; <em>off the court.</em></div>
+  <div class="life-photos">
+    <div class="life-photo">
+      <img src="images/tennis.jpeg" alt="Tennis at sunset" style="object-position:right 70%">
+      <div class="life-photo-label">Tennis · South Florida</div>
+    </div>
+    <div class="life-photo">
+      <img src="images/gym.jpg" alt="Gym" style="object-position:center 40%">
+      <div class="life-photo-label">Gym</div>
+    </div>
+    <div class="life-photo">
+      <img src="images/tennis1.jpeg" alt="On the court" style="object-position:center 65%">
+      <div class="life-photo-label">On the court.</div>
+    </div>
+  </div>
+  <div class="life-tags">
+    <span class="life-tag">🎾 Tennis &amp; Pickleball</span>
+    <span class="life-tag">🏋️ Gym</span>
+    <span class="life-tag">🏏 Cricket</span>
+    <span class="life-tag">⚽ Real Madrid · La Liga · UCL</span>
+    <span class="life-tag">🌴 South Florida</span>
+  </div>
+</section>
+
+<section class="recs fade" id="recs">
+  <div class="ey">Recommendations</div>
+  <div class="sh">What they say.</div>
+  <div class="recs-grid">
+    <div class="rec">
+      <p class="rec-q">"Ali smashed it across the board — growth, operations, product, you name it. He's got this knack for seeing a mountain, deciding it's a good day for a climb, and just scaling it. Bigger the project, the wider his grin."</p>
+      <div class="rec-who">
+        <div class="rec-photo"><img src="images/owais.jpg" alt="Muhammad Owais"></div>
+        <div><div class="rec-n">Muhammad Owais Qureshi</div><div class="rec-r">Co-founder, Dastgyr · Forbes 30U30</div></div>
+      </div>
+    </div>
+    <div class="rec">
+      <p class="rec-q">"Ali is one of those rare product managers who combines dedication with a meticulous eye for detail. Working with Ali doesn't just mean having a PM — it means having a partner committed to excellence."</p>
+      <div class="rec-who">
+        <div class="rec-photo"><img src="images/abz.jpg" alt="Abdullah bin Zia"></div>
+        <div><div class="rec-n">Abdullah bin Zia</div><div class="rec-r">Head of Product, Dastgyr · PM at Metal</div></div>
+      </div>
+    </div>
+    <div class="rec">
+      <p class="rec-q">"Ali improved delivery completion from 70% to 97%+ in our largest market. His obsession with supply chain problems made him a perfect fit as Product Manager — Operations."</p>
+      <div class="rec-who">
+        <div class="rec-photo"><img src="images/mustafa.jpg" alt="Mustafa Bengali"></div>
+        <div><div class="rec-n">Mustafa Bengali</div><div class="rec-r">Product · Strategy · INSEAD</div></div>
+      </div>
+    </div>
+    <div class="rec">
+      <p class="rec-q">"Ali's creative prowess is matched only by his unwavering work ethic. He approaches challenges with fearless determination — refusing to accept 'no' as an answer."</p>
+      <div class="rec-who">
+        <div class="rec-photo"><img src="images/safeer.jpg" alt="Safeer Moosvi"></div>
+        <div><div class="rec-n">Safeer Moosvi</div><div class="rec-r">Product @ Tyro</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact fade" id="contact">
+  <div>
+    <div class="ct-big">Let's<br>talk.</div>
+    <p class="ct-sub">Open to Program Manager, Senior PM, and AI Product roles. Enterprise IT, logistics, healthcare IT, fintech. South Florida — open to remote.</p>
+  </div>
+  <div class="ct-links">
+    <a href="https://linkedin.com/in/alizeeshan75" target="_blank" class="ct-link"><span class="ct-type">LinkedIn</span><span class="ct-val">linkedin.com/in/alizeeshan75</span></a>
+    <a href="https://github.com/alizeeshan75" target="_blank" class="ct-link"><span class="ct-type">GitHub</span><span class="ct-val">github.com/alizeeshan75</span></a>
+    <a href="mailto:ali.zeeshan75@outlook.com" class="ct-link"><span class="ct-type">Email</span><span class="ct-val">ali.zeeshan75@outlook.com</span></a>
+  </div>
+</section>
+
+<footer>
+  <span class="ft-l">Ali Zeeshan</span>
+  <span class="ft-r">Program Management · Digitalization · AI</span>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
