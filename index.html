@@ -29,25 +29,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:
 .hero-photo-ring{width:clamp(260px,30vw,380px);aspect-ratio:1;border-radius:50%;overflow:hidden;border:5px solid var(--y);box-shadow:0 0 0 10px rgba(255,182,0,.1)}
 .hero-photo-ring img{width:100%;height:100%;object-fit:cover;object-position:center top}
 
-.ticker{background:var(--y);padding:1.1rem 0;overflow:hidden}
+.ticker{background:var(--dark);padding:1.1rem 0;overflow:hidden}
 .ticker-track{display:inline-flex;animation:tick 22s linear infinite;white-space:nowrap}
 @keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-.ticker-item{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:white;padding:0 2rem}
-.ticker-sep{font-size:.72rem;color:rgba(255,255,255,.4);padding:0 .5rem}
+.ticker-item{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--y);padding:0 2rem}
+.ticker-sep{font-size:.72rem;color:rgba(255,255,255,.3);padding:0 .5rem}
 
 .ey{font-size:.62rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--y);margin-bottom:.8rem}
 .sh{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.05;margin-bottom:2.5rem}
 .sh em{font-style:normal;color:var(--y)}
 
-.dhl-section{min-height:100vh;background:var(--y);display:flex;align-items:center}
+.dhl-section{min-height:100vh;background:var(--white);display:flex;align-items:center}
 .dhl-content{width:100%;padding:6rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.dhl-content .ey{color:rgba(255,255,255,.7)}
+.dhl-content .ey{color:var(--y)}
 .dhl-content .sh{color:white;margin-bottom:0}
 .dhl-items{display:flex;flex-direction:column;gap:1.5rem}
 .dhl-item{display:flex;gap:1rem;align-items:flex-start}
-.dhl-dot{width:8px;height:8px;border-radius:50%;background:white;flex-shrink:0;margin-top:.5rem}
-.dhl-text{font-size:.9rem;font-weight:500;line-height:1.7;color:rgba(255,255,255,.92)}
-.dhl-text strong{color:white;font-weight:800}
+.dhl-dot{width:8px;height:8px;border-radius:50%;background:var(--y);flex-shrink:0;margin-top:.5rem}
+.dhl-text{font-size:1rem;font-weight:500;line-height:1.8;color:var(--dark)}
+.dhl-text strong{color:var(--dark);font-weight:800}
 
 .dhl-quote-break{height:100vh;position:relative;overflow:hidden}
 .dhl-quote-break img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:brightness(.5)}
@@ -61,14 +61,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:
 .tl-item{flex:1;position:relative;z-index:1}
 .tl-dot{width:14px;height:14px;border-radius:50%;background:var(--y);border:3px solid white;box-shadow:0 0 0 2px var(--y);margin-bottom:.8rem}
 .tl-date{font-size:.58rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--y);margin-bottom:.25rem}
-.tl-role{font-size:.78rem;font-weight:700;color:var(--dark);line-height:1.3;margin-bottom:.15rem}
+.tl-role{font-size:.85rem;font-weight:700;color:var(--dark);line-height:1.3;margin-bottom:.15rem}
 .tl-sub{font-size:.65rem;font-weight:400;color:var(--mid)}
 .work-screens{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:1rem}
 .work-screen{position:relative;overflow:hidden;border-radius:4px;box-shadow:0 4px 24px rgba(0,0,0,.1)}
-.work-screen img{width:100%;display:block}
-.work-screen-label{position:absolute;bottom:0;left:0;right:0;padding:.9rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:white}
+.work-screen img{width:100%;display:block;transition:transform .4s ease}
+.work-screen:hover img{transform:scale(1.03)}
+.work-screen-label{position:absolute;bottom:0;left:0;right:0;padding:.9rem 1.2rem;background:linear-gradient(transparent,rgba(0,0,0,.8));font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:white;transition:opacity .3s}
+.work-screen:hover .work-screen-label{opacity:0}
+.work-screen-overlay{position:absolute;inset:0;background:rgba(0,0,0,.88);padding:1.8rem;display:flex;flex-direction:column;justify-content:center;opacity:0;transition:opacity .35s ease}
+.work-screen:hover .work-screen-overlay{opacity:1}
+.wso-role{font-size:.58rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--y);margin-bottom:.6rem}
+.wso-title{font-size:1rem;font-weight:800;color:white;margin-bottom:.8rem;line-height:1.2}
+.wso-points{display:flex;flex-direction:column;gap:.5rem}
+.wso-point{font-size:.78rem;font-weight:400;color:rgba(255,255,255,.85);line-height:1.5;padding-left:.9rem;position:relative}
+.wso-point::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--y)}
 .pm-keywords{margin-top:2.5rem;padding:2rem;background:white;display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
-.pm-kw{font-size:.72rem;font-weight:700;padding:.45rem 1.1rem;border:2px solid var(--y);color:var(--dark);letter-spacing:.05em}
+.pm-kw{font-size:.8rem;font-weight:700;padding:.5rem 1.2rem;border:2px solid var(--y);color:var(--dark);letter-spacing:.05em}
 
 .projects{padding:7rem 4rem;background:var(--white)}
 .project-row{display:grid;grid-template-columns:55px 1fr 1fr;gap:3rem;align-items:start;padding:3.5rem 0;border-bottom:1px solid var(--border)}
@@ -76,7 +85,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:
 .project-row.dim{opacity:.3}
 .p-idx{font-size:.6rem;font-weight:800;letter-spacing:.2em;color:var(--y);padding-top:.3rem;line-height:1.8}
 .p-name{font-size:clamp(1.1rem,1.8vw,1.5rem);font-weight:800;letter-spacing:-.02em;color:var(--dark);margin-bottom:.5rem}
-.p-desc{font-size:.83rem;font-weight:400;line-height:1.75;color:var(--mid);margin-bottom:1rem}
+.p-desc{font-size:.92rem;font-weight:400;line-height:1.8;color:var(--mid);margin-bottom:1rem}
 .p-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:1.2rem}
 .pill{font-size:.58rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.22rem .6rem;border:1.5px solid var(--border);color:var(--mid)}
 .p-link{font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--dark);text-decoration:none;border-bottom:2.5px solid var(--y);padding-bottom:2px;display:inline-block;transition:color .2s}
@@ -101,7 +110,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 4rem;display:
 .recs .sh{color:white}
 .recs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.2);margin-top:3rem}
 .rec{background:white;padding:2.5rem}
-.rec-q{font-size:.92rem;font-style:italic;font-weight:400;line-height:1.8;color:var(--dark);margin-bottom:1.5rem}
+.rec-q{font-size:1rem;font-style:italic;font-weight:400;line-height:1.8;color:var(--dark);margin-bottom:1.5rem}
 .rec-who{display:flex;align-items:center;gap:.9rem}
 .rec-photo{width:52px;height:52px;border-radius:50%;overflow:hidden;flex-shrink:0;border:2.5px solid var(--y);background:var(--light)}
 .rec-photo img{width:100%;height:100%;object-fit:cover;object-position:center center}
@@ -194,18 +203,22 @@ footer{background:var(--dark);padding:1.8rem 4rem;display:flex;justify-content:s
   </div>
 </div>
 
+<div style="background:white;padding:3rem 5rem 1.5rem">
+  <div style="font-size:.62rem;font-weight:800;letter-spacing:.25em;text-transform:uppercase;color:var(--y);margin-bottom:.5rem">Career</div>
+  <div style="font-size:clamp(2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.03em;line-height:1.05">Work <em style="font-style:normal;color:var(--y)">Experience.</em></div>
+</div>
 <section class="dhl-section" id="dhl">
   <div class="dhl-content fade">
     <div>
-      <img src="images/DHL_Group_logo.svg" alt="DHL Group" style="height:32px;margin-bottom:1.2rem;display:block;filter:brightness(0) invert(1)">
+      <img src="images/DHL_Group_logo.svg" alt="DHL Group" style="height:32px;margin-bottom:1.2rem;display:block;filter:none">
       <div class="ey">DHL IT Group · 2023–Present</div>
-      <div class="sh" style="color:white">Americas<br>Program<br>Management.</div>
+      <div class="sh" style="color:var(--dark);font-size:clamp(2.5rem,5vw,4.5rem)">Americas<br>Program<br><em>Management.</em></div>
       <div style="display:flex;align-items:center;gap:.5rem;flex-wrap:wrap;margin-top:1rem">
-        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:rgba(255,255,255,.2);color:white;letter-spacing:.06em">DHL Group</span>
-        <span style="color:rgba(255,255,255,.4);font-size:.8rem">→</span>
-        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:rgba(255,255,255,.2);color:white;letter-spacing:.06em">Global Business Services</span>
-        <span style="color:rgba(255,255,255,.4);font-size:.8rem">→</span>
-        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:white;color:var(--y);letter-spacing:.06em">IT Group Functions Americas</span>
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:var(--light);color:var(--dark);letter-spacing:.06em">DHL Group</span>
+        <span style="color:var(--mid);font-size:.8rem">→</span>
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:var(--light);color:var(--dark);letter-spacing:.06em">Global Business Services</span>
+        <span style="color:var(--mid);font-size:.8rem">→</span>
+        <span style="font-size:.6rem;font-weight:700;padding:.25rem .6rem;background:var(--y);color:white;font-weight:800;letter-spacing:.06em">IT Group Functions Americas</span>
       </div>
     </div>
     <div class="dhl-items">
@@ -269,10 +282,30 @@ footer{background:var(--dark);padding:1.8rem 4rem;display:flex;justify-content:s
     <div class="work-screen">
       <img src="images/dastgyr_warehouse.jpg" alt="Warehouse Operations App">
       <div class="work-screen-label">Warehouse Operations — WMS Mobile App</div>
+      <div class="work-screen-overlay">
+        <div class="wso-role">Product Manager · Warehouse Operations</div>
+        <div class="wso-title">WMS Mobile App</div>
+        <div class="wso-points">
+          <div class="wso-point">Led end-to-end development of a scalable warehouse management system with engineering and business stakeholders</div>
+          <div class="wso-point">Delivered full inventory visibility — loading, sorting, bin scanning, vehicle arrival, and put-away flows</div>
+          <div class="wso-point">Integrated WMS with financial ledgers, reducing reconciliation errors by ~90%</div>
+          <div class="wso-point">Improved warehouse efficiency by ~25% across multiple markets</div>
+        </div>
+      </div>
     </div>
     <div class="work-screen">
       <img src="images/dastgyr_delivery.jpg" alt="Delivery Operations App">
       <div class="work-screen-label">Delivery Operations — Driver App &amp; Route Management</div>
+      <div class="work-screen-overlay">
+        <div class="wso-role">Product &amp; Operations Lead → Product Manager</div>
+        <div class="wso-title">Driver App &amp; Route Management</div>
+        <div class="wso-points">
+          <div class="wso-point">Owned delivery tracking system enabling root-cause analysis on delivery outcomes</div>
+          <div class="wso-point">Redesigned city-level delivery operations — achieved ~98% delivery reliability</div>
+          <div class="wso-point">Built digital payment &amp; settlement flow, eliminating cash handling in last-mile ops</div>
+          <div class="wso-point">Integrated Zendesk into core platform, reducing issue resolution times by ~12 hours</div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="pm-keywords">
